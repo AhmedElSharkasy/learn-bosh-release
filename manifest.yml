@@ -24,7 +24,7 @@ resource_pools:
   cloud_properties: {}
 
 compilation:
-  workers: 2
+  workers: 1
   network: default
   cloud_properties: {}
 
@@ -37,7 +37,7 @@ update:
 jobs:
 - name: app
   templates:
-  - name: app
+  - name: ctl
   instances: 1
   resource_pool: default
   networks:

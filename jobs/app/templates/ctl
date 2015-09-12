@@ -6,9 +6,6 @@ LOG_DIR=/var/vcap/sys/log/app
 PIDFILE=$RUN_DIR/app.pid
 RUNAS=vcap
 
-export PATH=/var/vcap/packages/ruby/bin:$PATH
-export BUNDLE_GEMFILE=/var/vcap/packages/simple_server/Gemfile
-export GEM_HOME=/var/vcap/packages/simple_server/gem_home/ruby/2.1.0
 
 function pid_exists() {
   ps -p $1 &> /dev/null
@@ -23,9 +20,7 @@ case $1 in
     echo $$ > $PIDFILE
 
     exec chpst -u $RUNAS:$RUNAS \
-      bundle exec ruby /var/vcap/packages/simple_server/app.rb \
-      -p <%= p("port") %> \
-      -o 0.0.0.0 \
+      /var/vcap/packages/interview-timer/builds/timer-linux \
       >>$LOG_DIR/server.stdout.log 2>>$LOG_DIR/server.stderr.log
     ;;
 

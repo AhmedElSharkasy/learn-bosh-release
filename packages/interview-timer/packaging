@@ -1,0 +1,3 @@
+set -e
+
+cp -r interview-timer/* ${BOSH_INSTALL_TARGET}

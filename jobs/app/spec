@@ -4,10 +4,4 @@ templates:
   ctl: bin/ctl
 
 packages:
-- simple_server
-- ruby
-
-properties:
-  port:
-    description: "Port on which server is listening"
-    default: 8080
+- interview-timer
