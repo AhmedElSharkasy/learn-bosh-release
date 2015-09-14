@@ -1,6 +1,6 @@
 --- 
 final_name: learn-bosh
 blobstore:
-  provider: s3
+  provider: local
   options: 
-    bucket_name: blob.cfblob.com
+    blobstore_path: /home/blobs
